@@ -10,24 +10,8 @@ time-bounded rental contracts.
 
 ## Run locally with PostgreSQL
 
-Install the dependencies, create a PostgreSQL database and user, and put the
-connection settings in a `.env` file in the project root:
-
-```dotenv
-POSTGRES_DB=property_management
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=your-password
-POSTGRES_HOST=localhost
-POSTGRES_PORT=5432
-```
-
-```sh
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-```
+Follow the [localhost setup guide](./docs/RUN_LOCALHOST.md) to run the API
+directly or with Docker Compose.
 
 The API is available at `http://127.0.0.1:8000/api/`. Set `SECRET_KEY` and
 `DEBUG=false` outside local development.
