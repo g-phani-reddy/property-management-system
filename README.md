@@ -84,7 +84,7 @@ authentication requirements, and validation behavior for every endpoint.
 | POST | `/api/auth/refresh` | Refresh an access token |
 | GET, PUT, PATCH | `/api/auth/me` | Retrieve or edit the authenticated user's profile |
 | POST, GET | `/api/properties` | Create and list properties |
-| GET, PUT, PATCH | `/api/properties/{property_id}` | Retrieve or edit a property and its units |
+| GET, PUT, PATCH | `/api/properties/{property_id}` | Retrieve or edit a property; units are included read-only |
 | POST | `/api/properties/{property_id}/units` | Add a unit to a property |
 | GET | `/api/units?status=available` | List units; filter by `available` or `occupied` |
 | GET, PUT, PATCH | `/api/units/{unit_id}` | Retrieve or edit a unit |
@@ -137,10 +137,4 @@ A successful `POST /api/contracts` response (when monthly rent is omitted):
   "total_value": "14400.00",
   "created_at": "2026-10-15T14:00:00Z"
 }
-```
-
-## Run tests
-
-```sh
-python manage.py test
 ```

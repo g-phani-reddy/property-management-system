@@ -1,6 +1,8 @@
-SECRET_KEY=sdsnndsfdsfdsfdfdfsfdsasdadasdasdasdadadasdasdsa
-POSTGRES_DB=pms-local-1
+SECRET_KEY=replace-with-a-long-random-secret
+POSTGRES_DB=property_management
 POSTGRES_USER=postgres
-POSTGRES_PASSWORD=admin
+POSTGRES_PASSWORD=replace-with-a-local-password
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
+DEBUG=false
+ALLOWED_HOSTS=localhost,127.0.0.1

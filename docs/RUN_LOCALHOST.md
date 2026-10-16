@@ -10,19 +10,14 @@ The API base URL is `http://127.0.0.1:8000/api/`. See the
 
 Prerequisites: Docker Engine and the Docker Compose plugin.
 
-1. From the project root, create a `.env` file:
+1. From the project root, copy the example environment file and edit `.env`:
 
-   ```dotenv
-   POSTGRES_DB=property_management
-   POSTGRES_USER=postgres
-   POSTGRES_PASSWORD=local-dev-password
-   SECRET_KEY=replace-this-with-a-long-random-development-secret
-   DEBUG=true
-   ALLOWED_HOSTS=localhost,127.0.0.1
+   ```sh
+   cp .envexample .env
    ```
 
-   Keep real credentials out of source control. `.env` is excluded by
-   `.gitignore`.
+   Set `POSTGRES_PASSWORD` and `SECRET_KEY` to local values. `.env` is excluded
+   from source control.
 
 2. Build and start the API and PostgreSQL:
 
@@ -34,8 +29,7 @@ Prerequisites: Docker Engine and the Docker Compose plugin.
    before starting the API.
 
 3. Open `http://127.0.0.1:8000/api/` or use the endpoints documented in the
-   [API reference](./API.md). The development server output appears in the
-   terminal.
+   [API reference](./API.md). Application logs appear in the terminal.
 
 4. Stop the services with `Ctrl+C`, then:
 
@@ -68,21 +62,17 @@ Prerequisites: Python 3.10+, PostgreSQL 13+, and `psql` command-line tools.
    If you already have a PostgreSQL user and database, use those credentials
    in the `.env` file instead.
 
-2. Create a `.env` file in the project root:
+2. Copy the example environment file and edit `.env` in the project root:
 
-   ```dotenv
-   POSTGRES_DB=property_management
-   POSTGRES_USER=pms_user
-   POSTGRES_PASSWORD=local-dev-password
-   POSTGRES_HOST=localhost
-   POSTGRES_PORT=5432
-   SECRET_KEY=replace-this-with-a-long-random-development-secret
-   DEBUG=true
-   ALLOWED_HOSTS=localhost,127.0.0.1
+   ```sh
+   cp .envexample .env
    ```
 
-   Django loads this file automatically. Environment variables exported in
-   your shell take precedence over values in `.env`.
+   Set `POSTGRES_USER=pms_user`, `POSTGRES_PASSWORD` to the password created
+   above, and `SECRET_KEY` to a long random local value. Keep
+   `POSTGRES_HOST=localhost` and `POSTGRES_PORT=5432`. Django loads this file
+   automatically. Environment variables exported in your shell take
+   precedence over values in `.env`.
 
 3. Create and activate a virtual environment, then install dependencies:
 
