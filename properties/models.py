@@ -28,6 +28,7 @@ class Unit(models.Model):
         Property,
         related_name="units",
         on_delete=models.CASCADE,
+        db_index=False,
     )
     unit_number = models.CharField(max_length=50)
     monthly_rent = models.DecimalField(

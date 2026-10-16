@@ -13,6 +13,7 @@ class Contract(models.Model):
         Unit,
         related_name="contracts",
         on_delete=models.PROTECT,
+        db_index=False,
     )
     member = models.ForeignKey(
         Member,
@@ -35,6 +36,20 @@ class Contract(models.Model):
 
     class Meta:
         ordering = ("start_date", "id")
+        indexes = [
+            models.Index(
+                fields=("unit", "start_date", "end_date"),
+                name="contract_unit_dates_idx",
+            ),
+            models.Index(
+                fields=("start_date", "id"),
+                name="contract_start_id_idx",
+            ),
+            models.Index(
+                fields=("end_date",),
+                name="contract_end_date_idx",
+            ),
+        ]
         constraints = [
             models.CheckConstraint(
                 condition=models.Q(end_date__gte=models.F("start_date")),

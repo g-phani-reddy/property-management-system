@@ -90,6 +90,9 @@ Refresh an access token with `POST /api/auth/refresh` and
 
 ## Endpoints
 
+See the [API reference](./docs/API.md) for request and response fields, examples,
+authentication requirements, and validation behavior for every endpoint.
+
 | Method | Path | Description |
 | --- | --- | --- |
 | POST | `/api/auth/register` | Register a staff user |
