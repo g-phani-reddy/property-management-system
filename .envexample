@@ -1,0 +1,6 @@
+SECRET_KEY=sdsnndsfdsfdsfdfdfsfdsasdadasdasdasdadadasdasdsa
+POSTGRES_DB=pms-local-1
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=admin
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
