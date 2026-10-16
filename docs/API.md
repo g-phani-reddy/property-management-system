@@ -86,8 +86,8 @@ Response:
 `GET`, `PUT`, `PATCH /auth/me`
 
 Returns or updates only the authenticated user's profile. The `id` is
-read-only; `email`, `first_name`, and `last_name` can be updated. `PUT` replaces
-the editable fields; `PATCH` updates only supplied fields.
+read-only; `email`, `first_name`, and `last_name` can be updated. `email` is
+required for `PUT`; `PATCH` updates only supplied fields.
 
 Example `PATCH` request:
 
